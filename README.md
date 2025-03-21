@@ -1,2 +1,2 @@
 # myapp
-This is g=for the learning of git
+This is git for the learning of git
