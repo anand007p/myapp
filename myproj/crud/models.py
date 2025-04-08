@@ -22,7 +22,7 @@ class Job(models.Model):
    jobclient = models.CharField(max_length=100, null=True,blank=True)
 
 
-class jobdelegation(models.Model):
-   jobid = models.ForeignKey('Job', on_delete=models.CASCADE, related_name='language',null=True,blank=True)
-   jobassign = models.ManyToManyField(Recruiter,related_name="assigned_recruiters", null=True)
-   jobdelegationdate = models.DateField(auto_now_add=True)  # Automatically set creation date
+class JobDelegation(models.Model):
+    jobid = models.ForeignKey('Job', on_delete=models.CASCADE, related_name='language', null=True, blank=True)
+    jobassign = models.ManyToManyField('Recruiter', related_name="assigned_recruiters", blank=True)
+    jobdelegationdate = models.DateField(auto_now_add=True)
